@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kawoomera Restaurant | Authentic Ugandan Flavours in Kampala</title>
+<meta name="description" content="Kawoomera Restaurant, Kampala. Breakfast, Lunch, Dinner & Supper. Matooke, Luwombo, Rolex, Grilled Chicken.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+:root{--brown:#4a2410;--orange:#c96a1e;--light:#fff8f0;--cream:#fbeed9;--dark:#2b1508}
+body{background:var(--light);color:var(--dark);line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 15px rgba(0,0,0,.08)}
+nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:16px 20px}
+.logo{font-size:26px;font-weight:900;color:var(--orange);letter-spacing:1px}
+.logo span{color:var(--brown)}
+.nav-links{display:flex;gap:28px;font-weight:600}
+.nav-links a.active{color:var(--orange);border-bottom:2px solid var(--orange)}
+.btn{padding:11px 22px;border-radius:30px;font-weight:700;border:2px solid var(--orange);cursor:pointer;display:inline-block}
+.btn-fill{background:var(--orange);color:#fff}
+.btn-outline{color:var(--brown)}
+.hero{max-width:1200px;margin:20px auto;display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;padding:20px}
+.hero-badge{background:var(--cream);color:var(--orange);padding:6px 14px;border-radius:20px;font-weight:700;font-size:13px;display:inline-block}
+.hero h1{font-size:48px;line-height:1.1;margin:14px 0}
+.hero h1 i{color:var(--orange);font-style:normal}
+.hero p{color:#555;font-size:17px;margin-bottom:20px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-info{display:flex;gap:25px;margin-top:22px;font-size:14px;font-weight:600;flex-wrap:wrap}
+.hero img{width:100%;height:420px;object-fit:cover;border-radius:20px;box-shadow:0 15px 30px rgba(0,0,0,.15)}
+.section{max-width:1200px;margin:auto;padding:40px 20px}
+.section h2{text-align:center;font-size:34px}
+.section>p{text-align:center;color:#666;margin-bottom:30px}
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:25px}
+.filters button{padding:9px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;cursor:pointer;font-weight:600}
+.filters button.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 5px 18px rgba(0,0,0,.07);padding-bottom:16px}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-body{padding:14px}
+.tag{background:var(--cream);color:var(--orange);font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;display:inline-block}
+.card h3{margin:10px 0 5px;font-size:18px}
+.card p{font-size:14px;color:#666;min-height:58px}
+.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.price{color:var(--orange);font-weight:800;font-size:18px}
+.add{width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;border:none;font-size:20px;cursor:pointer}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;background:var(--brown);color:#fff;border-radius:20px;padding:30px}
+.about img{width:100%;height:300px;object-fit:cover;border-radius:16px}
+.about h2{text-align:left}
+.about ul{margin:15px 0 0 18px}
+.order-box{background:#fff;border-radius:20px;padding:25px;box-shadow:0 5px 20px rgba(0,0,0,.08);display:grid;grid-template-columns:1fr 1fr;gap:20px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin-top:6px;font-size:15px}
+label{font-weight:600;font-size:14px}
+.cart-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #ddd;font-size:15px}
+footer{background:var(--brown);color:#fff;padding:35px 20px 15px;margin-top:30px}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+footer h3{color:#f2a65a;margin-bottom:10px}
+.copy{text-align:center;margin-top:25px;font-size:13px;opacity:.8}
+#toast{position:fixed;bottom:20px;right:20px;background:var(--brown);color:#fff;padding:14px 20px;border-radius:10px;display:none;z-index:200}
+@media(max-width:900px){.hero,.about,.order-box{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:36px}.nav-links{display:none}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:500px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+  <a href="#" class="logo">🍲 KAWOOMERA<span></span></a>
+  <div class="nav-links"><a href="#" class="active">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#order">Order</a><a href="#contact">Contact</a></div>
+  <div><a href="#menu" class="btn btn-outline">View Menu</a> <a href="#order" class="btn btn-fill">Order Now</a></div>
+</nav>
+</header>
+
+<section class="hero">
+  <div>
+    <span class="hero-badge">UGANDAN RESTAURANT • KAMPALA</span>
+    <h1>Authentic Ugandan Flavours<br><i>Served Fresh Daily</i></h1>
+    <p>Enjoy traditional dishes made with love - from hearty matooke & luwombo to grilled chicken, Rolex, and freshly brewed tea. Breakfast, Lunch, Dinner & Supper served daily.</p>
+    <div class="hero-btns"><a href="#menu" class="btn btn-fill">View Menu</a><a href="#order" class="btn btn-outline">🛍 Order Now</a></div>
+    <div class="hero-info"><span>📍 Kampala, Uganda</span><span>🕒 Open Daily 7:00 AM - 11:00 PM</span><span>⭐ 4.8/5 • 500+ Happy Customers</span></div>
+  </div>
+  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=80" alt="Ugandan food">
+</section>
+
+<section class="section" id="menu">
+  <h2>Explore Our Meals</h2>
+  <p>From breakfast to late-night supper - discover our full range of Ugandan classics</p>
+  <div class="filters">
+    <button class="active" onclick="filterMenu('all',this)">All</button>
+    <button onclick="filterMenu('breakfast',this)">Breakfast</button>
+    <button onclick="filterMenu('lunch',this)">Lunch</button>
+    <button onclick="filterMenu('dinner',this)">Dinner</button>
+    <button onclick="filterMenu('supper',this)">Supper</button>
+  </div>
+  <div class="grid" id="menuGrid"></div>
+</section>
+
+<section class="section" id="about">
+  <div class="about">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Restaurant">
+    <div>
+      <h2>About Kawoomera</h2>
+      <p style="margin-top:10px">Taste of Uganda, served fresh in the heart of Kampala. Authentic recipes, local ingredients, warm hospitality.</p>
+      <ul><li>Fresh ingredients from local markets daily</li><li>Fast service for breakfast, lunch, dinner & supper</li><li>Dine-in, Takeaway & Delivery around Kampala</li><li>Clean, family-friendly environment</li></ul>
+      <br><a href="#order" class="btn btn-fill">Order Your Meal</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="order">
+  <h2>Order Now</h2>
+  <p>Choose your meal, we deliver hot and fresh.</p>
+  <div class="order-box">
+    <div>
+      <h3>Your Cart 🛒</h3>
+      <div id="cartList"><p style="color:#888">Your cart is empty. Tap + on any meal to add it.</p></div>
+      <h3 style="margin-top:15px">Total: <span id="total">0 UGX</span></h3>
+      <button class="btn btn-fill" style="margin-top:10px;width:100%" onclick="orderWhatsApp()">Order on WhatsApp</button>
+    </div>
+    <form onsubmit="submitOrder(event)">
+      <label>Your Name</label><input required placeholder="e.g. Leon Khizzy">
+      <label>Phone Number</label><input required placeholder="e.g. 0700 123 456">
+      <label>Delivery Location</label><input required placeholder="e.g. Ntinda, Kampala">
+      <label>Meal Time</label>
+      <select><option>Breakfast - 7:00-10:30 AM</option><option>Lunch - 12:00-3:00 PM</option><option>Dinner - 5:00-9:00 PM</option><option>Supper - 9:00-11:00 PM</option></select>
+      <label>Extra Note</label><textarea rows="3" placeholder="No pepper, extra matooke..."></textarea>
+      <button class="btn btn-fill" style="width:100%;margin-top:12px">Place Order</button>
+    </form>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div><h3>🍲 KAWOOMERA</h3><p>Taste of Uganda, served fresh in the heart of Kampala. Authentic recipes, local ingredients, warm hospitality.</p></div>
+    <div><h3>Visit Us</h3><p>Plot 22, Yusuf Lule Road, Kampala, Uganda<br>hello@kawoomera.ug<br>+256 700 123 456</p></div>
+    <div><h3>Opening Hours</h3><p>Mon - Sun: 7:00 AM - 11:00 PM<br>Takeaway & Delivery Available<br>Breakfast | Lunch | Dinner | Supper</p></div>
+  </div>
+  <p class="copy">© 2026 Kawoomera Restaurant. All rights reserved. • Privacy Policy • Terms of Service</p>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+const menu=[
+{name:"Rolex & Tea Combo",cat:"breakfast",price:8000,desc:"Classic chapati rolled with egg, onions, tomatoes served with spiced milk tea",img:"https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&q=80"},
+{name:"Katogo & Tea",cat:"breakfast",price:12000,desc:"Hearty matooke katogo with beef, served with African tea",img:"https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80"},
+{name:"Luwombo with Matooke",cat:"lunch",price:25000,desc:"Traditional steamed beef Luwombo cooked in banana leaves, served with matooke",img:"https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80"},
+{name:"Pilau & Chicken",cat:"lunch",price:20000,desc:"Spiced pilau rice with grilled chicken and salad",img:"https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&q=80"},
+{name:"Grilled Chicken & Matooke",cat:"dinner",price:30000,desc:"Flame-grilled chicken seasoned with Ugandan spices, served with matooke & salad",img:"https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&q=80"},
+{name:"Fish & Posho",cat:"dinner",price:28000,desc:"Grilled tilapia with posho, greens and groundnut stew",img:"https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=600&q=80"},
+{name:"Beef Katogo",cat:"supper",price:12000,desc:"Hearty late-night stew with matooke, beef, and classic spices",img:"https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&q=80"},
+{name:"Milk Tea & Chapati",cat:"supper",price:7000,desc:"Light late-night supper - warm chapati with spiced milk tea",img:"https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=80"},
+];
+let cart=[];
+function renderMenu(filter="all"){
+  const grid=document.getElementById("menuGrid");
+  grid.innerHTML="";
+  menu.filter(m=>filter==="all"||m.cat===filter).forEach(m=>{
+    grid.innerHTML+=`<div class="card"><img src="${m.img}"><div class="card-body"><span class="tag">${m.cat.toUpperCase()}</span><h3>${m.name}</h3><p>${m.desc}</p><div class="price-row"><span class="price">${m.price.toLocaleString()} UGX</span><button class="add" onclick="addToCart('${m.name}',${m.price})">+</button></div></div></div>`;
+  });
+}
+function filterMenu(cat,btn){
+  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active"); renderMenu(cat);
+}
+function addToCart(name,price){
+  cart.push({name,price}); updateCart();
+  showToast(name+" added to cart");
+}
+function updateCart(){
+  const list=document.getElementById("cartList");
+  if(cart.length===0){list.innerHTML="<p style='color:#888'>Your cart is empty.</p>";}
+  else{list.innerHTML=cart.map(c=>`<div class="cart-item"><span>${c.name}</span><b>${c.price.toLocaleString()} UGX</b></div>`).join("");}
+  let total=cart.reduce((s,c)=>s+c.price,0);
+  document.getElementById("total").innerText=total.toLocaleString()+" UGX";
+}
+function showToast(msg){
+  let t=document.getElementById("toast"); t.innerText=msg; t.style.display="block";
+  setTimeout(()=>t.style.display="none",2500);
+}
+function orderWhatsApp(){
+  if(cart.length===0){showToast("Add a meal first!");return;}
+  let total=cart.reduce((s,c)=>s+c.price,0);
+  let text="Hello Kawoomera! I want to order:%0A"+cart.map(c=>"- "+c.name+" - "+c.price+" UGX").join("%0A")+"%0A Total: "+total+" UGX";
+  window.open("https://wa.me/256700123456?text="+text,"_blank");
+}
+function submitOrder(e){
+  e.preventDefault();
+  if(cart.length===0){showToast("Please add a meal to cart first!");return;}
+  showToast("Thank you! Your order has been received. We will call you soon.");
+  cart=[]; updateCart(); e.target.reset();
+}
+renderMenu();
+</script>
+</body>
+</html>
